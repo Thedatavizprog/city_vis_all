@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A pie chart showing the distribution of AQI categories",
+  "data": {"url": "data_selected.csv"},
+  "title": {
+    "text": "Distribution of AQI Categories",
+    "anchor": "middle",
+    "fontSize": 20,
+    "offset": 10,
+    "color": "black"
+  },
+  "view": {
+    "stroke": "transparent"
+  },
+  "mark": {
+    "type": "arc",
+    "outerRadius": 150
+  },
+  "encoding": {
+    "theta": {
+      "field": "AQI Category",
+      "type": "nominal",
+      "aggregate": "count"
+    },
+    "color": {
+      "field": "AQI Category",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category20"
+      },
+      "legend": {
+        "title": null,
+        "labelLimit": 0
+      }
+    },
+    "tooltip": [
+      {
+        "field": "AQI Category",
+        "type": "nominal",
+        "title": "Category"
+      },
+      {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Number of Cities"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "continuousWidth": 800,
+      "continuousHeight": 600
+    },
+    "axis": {
+      "domainColor": null
+    }
+  }
+}

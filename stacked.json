@@ -1,0 +1,53 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A stacked bar chart of AQI categories per pollutant in selected cities",
+  "data": {"url": "data_selected.csv"},
+  "mark": {"type": "bar", "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "City",
+      "type": "nominal",
+      "axis": {
+        "title": "City",
+        "labelAngle": 0,
+        "labelOverlap": true
+      }
+    },
+    "y": {
+      "aggregate": "count",
+      "field": "AQI Category",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of Records",
+        "grid": true
+      }
+    },
+    "color": {
+      "field": "AQI Category",
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"},
+      "legend": {
+        "title": "AQI Categories",
+        "orient": "top",
+        "columns": 2
+      }
+    },
+    "column": {
+      "field": "Pollutant",
+      "type": "nominal",
+      "spacing": 10,
+      "header": {"title": "Pollutant"}
+    },
+    "tooltip": [
+      {"field": "City", "type": "nominal"},
+      {"field": "Pollutant", "type": "nominal"},
+      {"field": "AQI Category", "type": "nominal"},
+      {"aggregate": "count", "type": "quantitative", "title": "Count"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"domainWidth": 1}
+  },
+  "autosize": {"type": "fit", "contains": "padding"}
+}

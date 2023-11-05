@@ -1,0 +1,11 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram of AQI values",
+    "data": {"url": "data_selected.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"bin": true, "field": "AQI Value", "type": "quantitative"},
+      "y": {"aggregate": "count", "type": "quantitative"}
+    }
+  }
+  

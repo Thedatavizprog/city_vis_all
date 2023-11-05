@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart showing CO AQI Values across Cities in Australia and Malaysia.",
+    "data": {"url": "data_selected.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "City", "type": "nominal", "axis": {"labelAngle": -45}, "title": "City"},
+      "y": {"field": "CO AQI Value", "type": "quantitative", "title": "CO AQI Value"},
+      "color": {"field": "CO AQI Category", "type": "nominal", "legend": {"title": "CO AQI Category"}},
+      "tooltip": [
+        {"field": "City", "type": "nominal"},
+        {"field": "CO AQI Value", "type": "quantitative"},
+        {"field": "CO AQI Category", "type": "nominal"}
+      ]
+    },
+    "title": "CO AQI Values Across Different Cities in Australia and Malaysia",
+    "height": 300,
+    "width": 1500
+  }
+  
