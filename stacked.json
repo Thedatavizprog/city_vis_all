@@ -40,7 +40,6 @@
     },
     "tooltip": [
       {"field": "City", "type": "nominal"},
-      {"field": "Pollutant", "type": "nominal"},
       {"field": "AQI Category", "type": "nominal"},
       {"aggregate": "count", "type": "quantitative", "title": "Count"}
     ]
