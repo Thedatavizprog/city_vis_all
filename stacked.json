@@ -35,8 +35,7 @@
     "column": {
       "field": "Pollutant",
       "type": "nominal",
-      "spacing": 10,
-      "header": {"title": "Pollutant"}
+      "spacing": 10
     },
     "tooltip": [
       {"field": "City", "type": "nominal"},
